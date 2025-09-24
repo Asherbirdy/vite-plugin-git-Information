@@ -35,14 +35,30 @@ export default defineConfig({
 ### 2. Use in Your Code
 
 ```typescript
-import { gitBranch, githash } from 'vite-git-info'
+import { gitBranch, gitHash } from 'vite-git-info'
 
 console.log(`Running on branch: ${gitBranch}`)
-console.log(`Commit: ${githash}`)
+console.log(`Commit: ${gitHash}`)
 
 // Example: Add to your app footer
-const footer = `Built from ${gitBranch}@${githash}`
+const footer = `Built from ${gitBranch}@${gitHash}`
 // Output: "Built from main@a1b2c3d"
+```
+
+### 3. TypeScript Projects
+
+If you're using TypeScript and encounter the error:
+```
+Cannot find module 'vite-git-info' or its corresponding type declarations
+```
+
+Add the following type declaration to your `vite-env.d.ts` file (or create one if it doesn't exist):
+
+```typescript
+declare module 'vite-git-info' {
+  export const gitBranch: string;
+  export const gitHash: string;
+}
 ```
 
 ## API
@@ -50,7 +66,7 @@ const footer = `Built from ${gitBranch}@${githash}`
 The plugin exposes two variables through the `vite-git-info` virtual module:
 
 - `gitBranch`: Current Git branch name
-- `githash`: Current Git hash (short format)
+- `gitHash`: Current Git hash (short format)
 
 ## Error Handling
 
