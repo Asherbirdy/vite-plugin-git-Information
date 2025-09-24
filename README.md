@@ -7,7 +7,7 @@ A Vite plugin that injects Git branch and commit information into your build, ma
 - 🔧 Zero configuration setup
 - 📦 Lightweight and fast
 - 🌿 Provides current Git branch name
-- 📝 Provides current Git commit hash (short)
+- 📝 Provides current Git hash (short)
 - 🚀 Works with Vite 3.x, 4.x, and 5.x
 - 💪 TypeScript support included
 
@@ -35,13 +35,13 @@ export default defineConfig({
 ### 2. Use in Your Code
 
 ```typescript
-import { gitBranch, gitCommit } from 'vite-git-info'
+import { gitBranch, githash } from 'vite-git-info'
 
 console.log(`Running on branch: ${gitBranch}`)
-console.log(`Commit: ${gitCommit}`)
+console.log(`Commit: ${githash}`)
 
 // Example: Add to your app footer
-const footer = `Built from ${gitBranch}@${gitCommit}`
+const footer = `Built from ${gitBranch}@${githash}`
 // Output: "Built from main@a1b2c3d"
 ```
 
@@ -50,7 +50,7 @@ const footer = `Built from ${gitBranch}@${gitCommit}`
 The plugin exposes two variables through the `vite-git-info` virtual module:
 
 - `gitBranch`: Current Git branch name
-- `gitCommit`: Current Git commit hash (short format)
+- `githash`: Current Git hash (short format)
 
 ## Error Handling
 

@@ -1,7 +1,7 @@
 {
   "name": "vite-plugin-git-information",
   "private": false,
-  "version": "0.1.2",
+  "version": "0.1.3",
   "type": "module",
   "scripts": {
     "dev": "vite",
