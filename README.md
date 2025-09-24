@@ -1,6 +1,8 @@
 # vite-plugin-git-information
 
-A Vite plugin that injects Git branch and commit information into your build, making it accessible in your application code.
+在正式環境上線後，常常不知道部署的是哪個版本或分支，造成除錯困難。這個 Vite 插件讓你輕鬆在應用程式中取得 Git 分支和 commit 資訊，適合在 console 或介面上顯示版本記錄。
+
+A Vite plugin that injects Git branch and commit information into your build, making it accessible in your application code. Perfect for displaying version information in console logs or UI to track what's running in production.
 
 ## Features
 
@@ -37,10 +39,16 @@ export default defineConfig({
 ```typescript
 import { gitBranch, gitHash } from 'vite-git-info'
 
-console.log(`Running on branch: ${gitBranch}`)
-console.log(`Commit: ${gitHash}`)
+// 在 console 顯示版本資訊，方便除錯
+console.log(`🌿 Branch: ${gitBranch}`)
+console.log(`📝 Commit: ${gitHash}`)
+console.log(`🚀 Build: ${gitBranch}@${gitHash}`)
 
-// Example: Add to your app footer
+// 在介面上顯示版本資訊
+const versionInfo = `v${gitBranch}-${gitHash}`
+document.querySelector('#version')?.textContent = versionInfo
+
+// 或加到頁面 footer
 const footer = `Built from ${gitBranch}@${gitHash}`
 // Output: "Built from main@a1b2c3d"
 ```
