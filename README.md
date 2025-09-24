@@ -42,6 +42,7 @@ console.log(`Commit: ${gitCommit}`)
 
 // Example: Add to your app footer
 const footer = `Built from ${gitBranch}@${gitCommit}`
+// Output: "Built from main@a1b2c3d"
 ```
 
 ## API
