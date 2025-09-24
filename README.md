@@ -1,7 +1,5 @@
 # vite-plugin-git-information
 
-在正式環境上線後，常常不知道部署的是哪個版本或分支，造成除錯困難。這個 Vite 插件讓你輕鬆在應用程式中取得 Git 分支和 commit 資訊，適合在 console 或介面上顯示版本記錄。
-
 A Vite plugin that injects Git branch and commit information into your build, making it accessible in your application code. Perfect for displaying version information in console logs or UI to track what's running in production.
 
 ## Features
